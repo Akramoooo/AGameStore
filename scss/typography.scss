@@ -1,0 +1,204 @@
+@use './variables' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    display: inline-block;
+    font-family: $heading-font;
+    color: #000000;
+}
+
+
+
+/* ЗАГОЛОВКИ ДЛЯ ВСЕГО САЙТА БЕЗ БЛОКОВ */
+h1 {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+@media (max-width: 769px) {
+    h1 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    h4 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    h5 {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+    }
+}
+
+.light__title {
+    font-family: $heading-font;
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* ТИПЫ ССЫЛОК КОТОРЫЕ ЧАСТО ИСПОЛЬЗУЮТСЯ */
+
+
+a {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--a-color);
+    letter-spacing: 0.2px;
+}
+
+
+
+.p__big {
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: inherit;
+}
+
+
+.p__middle {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: inherit;
+}
+
+/* START ТИПЫ ТЕКСТА */
+.text-lg {
+    // p-big
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    color: inherit;
+}
+
+.text-md {
+    // p-default
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: inherit;
+}
+
+.text-sm {
+    // p-small
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .text-md {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .text-sm {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .text-lg {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+/* END ТИПЫ ТЕКСТА */
+.text__bold {
+    font-weight: 700;
+}
+
+.text__thin {
+    font-weight: 400;
+}
+
+.btn__text {
+    font-family: $heading-font;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: inherit;
+}
+
+/* Списки */
+
+.minimal-list {
+    margin: 1em 0;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--text-color);
+    list-style: none;
+}
+
+.minimal-list li {
+    position: relative;
+    margin: 0.5em 0;
+    padding-left: 10px;
+}
+
+.minimal-list li::before {
+    content: '•';
+    position: absolute;
+    left: -12px;
+    top: -2.7px;
+    color: #ff4701;
+    font-size: 25px;
+    line-height: 1;
+}

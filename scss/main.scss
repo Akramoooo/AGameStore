@@ -1,0 +1,417 @@
+@use "./variables" as *;
+@use "./typography";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем отступы и паддинги у всех элементов, но НЕ сбрасываем стандартные стили */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote,
+pre {
+  margin: 0;
+  padding: 0;
+  font-weight: bold !important;
+}
+
+
+*:focus {
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+a,
+div {
+  color: inherit;
+}
+
+/* Улучшаем стили кнопок */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+/* Убираем странные отступы в таблицах */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Адаптивные изображения */
+img {
+  /* max-width: 100%; */
+  height: auto;
+  display: block;
+}
+
+/* Обнуляем стандартные стили списков */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Убираем стандартный стиль для input[type="number"] в Chrome */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  font-size: $base-font-size;
+  font-style: normal;
+  font-family: var(--main-font);
+  box-sizing: inherit;
+  color: $text-light;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(28, 14, 56);
+}
+
+
+/* Главный стили для стандартных блоков */
+.form-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+}
+
+.wrapper {
+  /* Обортка для блоков без отступов */
+  background-color: $color-white;
+  border-radius: $radius-md;
+  padding: 0;
+  box-shadow: $vk-shadow;
+  margin-bottom: $medium-spacing;
+}
+
+.flex__box {
+  /* Стандартное включение Flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  /* Стандартное включение Flex */
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* Включает Flexbox */
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* Позволяет элементам переноситься на новую строку */
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+/* Центрирование элементов по горизонтали */
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-flex__end {
+  justify-content: flex-end !important;
+}
+
+/* Выравнивание элементов по вертикали */
+.align-items-center {
+  align-items: center !important;
+}
+
+/* Равномерное распределение пространства между элементами */
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  //  margin: 0 auto;
+}
+
+.line {
+  width: 100%;
+  max-width: 796px;
+  min-height: 1px;
+  background-color: #00000014;
+
+  &.gold {
+    background-color: #FFE100;
+  }
+
+  &.center {
+    margin: 0 auto;
+  }
+
+  &.bold {
+    height: 2px;
+  }
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.error-container {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  background-color: black;
+
+  &.success {
+    background: #00d26a;
+  }
+
+  &.warning {
+    background: #f1c40f;
+  }
+
+  &.danger {
+    background: #e74c3c;
+  }
+
+  &.sm {
+    max-width: 4px;
+    max-height: 4px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-10 {
+  grid-column: span 10;
+}
+
+.col-11 {
+  grid-column: span 11;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
+
+/* Медиа-запросы для разных устройств */
+// @media (max-width: 1200px) {
+//   .grid__container {
+//     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Колонки будут занимать минимум 300px на экранах среднего размера */
+//   }
+// }
+
+@media (max-width: 992px) {
+  .grid__container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Для планшетов и смартфонов колонки будут занимать минимум 200px */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid__container {
+    grid-template-columns: 1fr;
+    /* На маленьких экранах все элементы будут занимать одну колонку */
+  }
+
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-6,
+  .col-12 {
+    grid-column: span 1;
+    /* Каждая колонка займет 1 ячейку */
+  }
+}
+
+/* Утилитарные классы для margin bottom */
+.mb-5 {
+  margin-bottom: $space-5;
+}
+
+.mb-8 {
+  margin-bottom: $space-8;
+}
+
+.mb-10 {
+  margin-bottom: $space-10;
+}
+
+.mb-12 {
+  margin-bottom: $space-12;
+}
+
+.mb-15 {
+  margin-bottom: $space-15;
+}
+
+.mb-16 {
+  margin-bottom: $space-16;
+}
+
+.mb-20 {
+  margin-bottom: $space-20;
+}
+
+.mb-25 {
+  margin-bottom: $space-25;
+}
+
+.mb-28 {
+  margin-bottom: $space-28;
+}
+
+.mb-32 {
+  margin-bottom: $space-32;
+}
+
+.mb-40 {
+  margin-bottom: $space-40;
+}
+
+/* Утилитарные классы для margin top */
+.mt-5 {
+  margin-top: $space-5;
+}
+
+.mt-8 {
+  margin-top: $space-8;
+}
+
+.mt-10 {
+  margin-top: $space-10;
+}
+
+.mt-12 {
+  margin-top: $space-12;
+}
+
+.mt-15 {
+  margin-top: $space-15;
+}
+
+.mt-16 {
+  margin-top: $space-16;
+}
+
+.mt-20 {
+  margin-top: $space-20;
+}
+
+.mt-25 {
+  margin-top: $space-25;
+}
+
+.mt-28 {
+  margin-top: $space-28;
+}
+
+.mt-32 {
+  margin-top: $space-32;
+}
+
+.mt-40 {
+  margin-top: $space-40;
+}

@@ -1,0 +1,217 @@
+// COLORS
+
+:root {
+    // Палитра цветов
+
+    /* 1. Акценты (Брендовые цвета) */
+    --gold: #ffe100;
+    --white: #ffffff;
+
+    /* 2. Нейтральные (Базовые) */
+    --black: #000000;
+    --gray: #7f7f7f;
+    --dark-gray: #454545;
+    --red: #F23636;
+
+    /* 3. Функциональные (Альфа-каналы для интерфейса) */
+    --black-a4: rgba(0, 0, 0, 0.04);
+    /* Черный с прозрачностью 4% */
+    --gold-a8: rgba(255, 225, 0, 0.08);
+    /* Золотой с прозрачностью 8% */
+    --red-a8: rgba(242, 54, 54, 0.08);
+    /* Красный с прозрачностьб 8% */
+
+    /* Роли цветов */
+    --button-primary-bg: var(--gold);
+    /* Главный цвет кнопок */
+    --button-primary-text: var(--black);
+    /* Цвет текста для главных кнопок */
+    --button-secondary-bg: var(--black-a4);
+    /* Второстепенный цвет кнопок */
+    --button-secondary-text: var(--dark-gray);
+    /* Цвет текста для второстепенных кнопок */
+
+    --error-color: var(--red);
+    /* Цвет для ошибок */
+    --error-bg: var(--red-a8);
+    /* Фоновой цвет для ошибок */
+    /* Фоны */
+    --bg-body: var(--white);
+    /* Цвет фона всего сайта */
+
+    --toggle-ball-light: rgba(255, 255, 255, 1);
+    --toggle-border-light: rgba(255, 255, 255, 1);
+    /* Цвета для черной базовой кнопки */
+    --base-button-bg-color: #000000;
+    --base-button-text-color: #ffffff;
+
+    --body-white-bg-color: #fff;
+    /* Цвет фона всего сайта */
+    --body-bg-color: #f6f7f8;
+    /* #edeef0; Цвет фона всего сайта */
+
+    --toggle-bg: #e0e0e0;
+    /* Светлый фон для переключателя */
+    --icon-color: #333;
+    /* Цвет иконок в светлой теме */
+
+    --yellow-btn-color: #ffe100;
+    /* Цвет для жёлтых кнопок */
+    --yellow-btn-hover-color: #ffcd33;
+    /* Цвет для жёлтых кнопок при наведении */
+
+    --color-gold: #ffe100;
+    /* Цвет для золотых элементов */
+
+    --color-light-black: #0000000f;
+    --color-blue: #157ee1;
+    --color-white: #ffffff;
+    --color-red: #ff3347;
+    --color-black: #000000;
+    --color-pink: #f1283c;
+    /* Цвет для розовых кнопок */
+    --color-dark-blue: #0f1327;
+    --color-grey-light: #d5d5d7;
+    --color-grey-dark: #30444e;
+    --color-border: #e9e9e8;
+    /* Цвет border */
+    --color-shadow: #0000000f;
+    /* Цвет тени */
+    --text-color: #0f1327;
+    /* Цвет текста */
+    --a-color: #000000;
+    /* Цвет для ссылок */
+    --a-color-hover: #1051e3;
+    /* Цвет для ссылок при наведении */
+
+    --shadow-light: 0 1px 4px #0000000f;
+    --shadow-medium: 0 2px 16px 2px rgba(0, 0, 0, 0.04);
+    --vk-shadow: 0 0 0 0.5px #d7d8d9;
+}
+
+.dark-theme {
+    --toggle-ball-dark: rgba(0, 0, 0, 1);
+    --toggle-border-dark: rgba(0, 0, 0, 1);
+    /* Цвета для черной базовой кнопки */
+    --base-button-bg-color: #ffe037;
+    --base-button-text-color: #000;
+
+    --body-bg-color: #232325;
+    --toggle-bg: #39393a;
+    /* Тёмный фон для переключателя */
+    --icon-color: #fff;
+    /* Белые иконки в тёмной теме  #ffffff80 */
+
+    --color-light-black: #0000000f;
+    --color-blue: #157ee1;
+    --color-white: #ffffff;
+    --color-red: #ff3347;
+    --color-black: #000000;
+    --color-pink: #f1283c;
+    /* Цвет для розовых кнопок */
+    --color-dark-blue: #0f1327;
+    --color-grey-light: #d5d5d7;
+    --color-grey-dark: #30444e;
+    --color-border: #e9e9e8;
+    /* Цвет border */
+    --color-shadow: #0000000f;
+    /* Цвет тени */
+    --text-color: #0f1327;
+    /* Цвет текста */
+    --a-color: #000000;
+    /* Цвет для ссылок */
+    --a-color-hover: #1051e3;
+    /* Цвет для ссылок при наведении */
+}
+
+$color-light-black: #0000000f;
+$color-blue: #157ee1;
+$color-red: #ff3347;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-pink: #f1283c;
+/* Цвет для розовых кнопок */
+$color-dark-blue: #0f1327;
+$color-grey-light: #d5d5d7;
+$color-grey-dark: #30444e;
+$color-border: #e9e9e8;
+/* Цвет border */
+$color-shadow: #0000000f;
+/* Цвет тени */
+$text-color: #0f1327;
+/* Цвет текста */
+$a-color: #0274f8;
+/* Цвет для ссылок */
+$a-color-hover: #1051e3;
+/* Цвет для ссылок при наведении */
+
+$btn-primary-bg-color: #4592ff;
+/* Главный цвет кнопок */
+$btn-primary-hover-bg-color: #1051e3;
+/* Цвет главной кнопки при наведении */
+$btn-primary-color: #ffffff;
+/* Цвет текста для главных кнопок */
+$input-text-color: #30444e;
+/* Цвет текста в инпутах */
+$input-border: 1px solid #d5d5d7;
+/* Цвет бордера для инпутов */
+$input-bg-color: #f2f3f5;
+/* Цвет фона для инпутов */
+$input-bg-check-color: #157ee1;
+/* Цвет фона для чекбоксов */
+
+/* Шрифты */
+:root {
+    --main-font: 'Manrope', sans-serif;
+}
+
+$heading-font: 'Montserrat', sans-serif;
+$base-font-size: 15px;
+$base-line-height: 1.5;
+$heading-font-weight: 700;
+$base-font-weight: 400;
+
+/* Отступы и интервалы */
+$small-spacing: 5px;
+$medium-spacing: 15px;
+$large-spacing: 20px;
+$base-border-radius: 5px;
+$space-5: 5px;
+$space-8: 8px;
+$space-10: 10px;
+$space-12: 12px;
+$space-15: 15px;
+$space-16: 16px;
+$space-20: 20px;
+$space-25: 25px;
+$space-28: 28px;
+$space-32: 32px;
+$space-40: 40px;
+
+/* Брейкпоинты для адаптивного дизайна */
+$breakpoint-xxs: 320px;
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+/* Тени */
+$shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.05);
+$vk-shadow: 0 0 0 0.5px #d7d8d9;
+
+/* Другие переменные */
+$border-width: 1px;
+$border-style: solid;
+$base-transition: all 0.3s ease;
+$radius-lg: 20px;
+$radius-md: 12px;
+/* Стандартные радиус для всех контейнеров */
+$radius-sm: 8px;
+$radius-xs: 4px;
+
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333;
+$text-light: #ffffff;
+$font-stack: 'Arial', sans-serif;
