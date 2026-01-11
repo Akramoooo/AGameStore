@@ -1,78 +1,17 @@
-# Nuxt Minimal Starter
+# AGameStore project
+Project using:  html, scss, vue/nuxt, supabase, typescript
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## How to Run
 
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Make .env file with variables (Just use my or you can create your own in Supabase site): 
+    NUXT_PUBLIC_SUPABASE_URL="https://xdeobspbalgysfmzigus.supabase.co"
+    NUXT_PUBLIC_SUPABASE_KEY="sb_publishable_xa8rwLQ2ezrYfF_h30TbvA_6pcI5mXB"
 
 
-# AGameStore
+Run commands: 
+npm install - to intall dependencies
+npm run dev - to run server
+
+
+Supabase: https://supabase.com
+
