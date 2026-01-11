@@ -12,9 +12,7 @@ Run commands:
 
 ```
 npm install - to intall dependencies
-
-```
-
 npm run dev - to run server
+```
 
 Supabase: https://supabase.com
