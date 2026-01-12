@@ -35,7 +35,7 @@ button {
 .btn {
     color: white;
     font-size: 18px;
-    padding: 16px 32px;
+    padding: 16px 48px;
     border-radius: 8px;
 
     &:disabled {

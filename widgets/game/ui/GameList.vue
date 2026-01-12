@@ -1,27 +1,29 @@
 <template>
     <div class="gamelist__container">
-        <SectionHeader title="Распродажа" :link-data="linkData" />
-        <div class="grid__container ">
-            <GameCard class="col-2" v-for="value in [1, 2, 3, 4, 5, 6]">
-                <template #action>
-                    <BaseButton block>Купить</BaseButton>
-                </template>
-            </GameCard>
+        <SectionHeader v-if="title" :title="title" :link-data="linkData" />
+        <div class="grid__container">
+            <slot name="content" v-for="game in games" :game="game" />
         </div>
 
     </div>
 </template>
 
-<script setup>
-import GameCard from '~/entities/Game/ui/GameCard.vue';
-import BaseButton from '~/shared/ui/BaseButton/BaseButton.vue';
+<script setup lang="ts">
+import type { Game } from '~/entities/Game/types/Game.type';
 import SectionHeader from '~/shared/ui/SectionHeader.vue';
 
+interface GameListProps {
+    games: Game[] | null
+    title?: string
+    linkData?: Record<string, string>
+}
+const props = defineProps<GameListProps>()
 
 const linkData = {
     title: "Посмотреть все",
     link: "#"
 }
+
 
 </script>
 

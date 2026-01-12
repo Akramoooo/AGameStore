@@ -1,22 +1,23 @@
 <template>
     <div class="game-info__container">
-        <NuxtLink href="#" class="company">Mojiken</NuxtLink>
-        <span class="p__big">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui autem, unde
-            pariatur ducimus
-            distinctio soluta cumque architecto quis aliquid saepe doloribus, nihil nostrum aliquam! Ullam, labore
-            beatae unde, deserunt molestiae sequi quae saepe impedit nam inventore autem velit modi quaerat tenetur eum
-            suscipit, quos numquam ratione magnam fugiat. Consequatur, tempora.</span>
-        <div class="tags">
-            <Badge title="Horror" border-radius="lg" />
-            <Badge title="Horror" border-radius="lg" />
-            <Badge title="Horror" border-radius="lg" />
-        </div>
+        <NuxtLink :href="company.site" class="company" target="_black">{{ company.name }}</NuxtLink>
+        <span class="p__middle">{{ desc }}</span>
+        <GameTags :tags="tags" />
     </div>
 </template>
 
 <script setup lang="ts">
 import Badge from '~/shared/ui/Badge.vue';
+import type { Company } from '../types/Game.type';
+import GameTags from './GameTags.vue';
 
+interface GameInfoProps {
+    company: Company;
+    desc?: string;
+    tags?: Array<string>;
+}
+
+const props = defineProps<GameInfoProps>();
 
 </script>
 
@@ -24,13 +25,9 @@ import Badge from '~/shared/ui/Badge.vue';
 .game-info__container {
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
+    row-gap: 6px;
 }
 
-.tags {
-    display: flex;
-    gap: 12px;
-}
 
 .company {
     color: rgb(9, 166, 169);

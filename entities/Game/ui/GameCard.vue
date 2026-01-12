@@ -1,16 +1,16 @@
 <template>
-    <div class="game-card__container form-container">
+    <div class="game-card__container form-container ">
         <Badge title="-23%" class="badge" />
         <div class="image-box">
-            <SmartImage class="image" src="../public/images/dreadout.jpeg" />
+            <SmartImage class="image" :src="game.preview" path="media/games" />
             <div class="blur-field">
-                <p class="p__big current-price">Rp 108.999</p>
-                <p class="p__middle old-price">Rp 159.999</p>
+                <p class="p__big current-price">{{ game.price }} $</p>
+                <p class="p__middle old-price">{{ game.price }} $</p>
             </div>
         </div>
         <div class="description-box">
-            <h4>DreadOut 2</h4>
-            <p class="p__middle company">Digital Happiness</p>
+            <h5 class="p__big">{{ game.name }}</h5>
+            <p class="p__middle company">{{ game.company.name }}</p>
             <div class="tags">
                 <NuxtLink href="#">
                     <p class="p__middle">Horror</p>
@@ -22,9 +22,10 @@
                     <p class="p__middle">Survival</p>
                 </NuxtLink>
             </div>
+
+            <slot name="action"></slot>
         </div>
 
-        <slot name="action"></slot>
 
     </div>
 </template>
@@ -32,17 +33,19 @@
 <script setup lang="ts">
 import Badge from '~/shared/ui/Badge.vue';
 import SmartImage from '~/shared/ui/SmartImage.vue';
+import type { Game, GameCardProps } from '../types/Game.type';
+
+const props = defineProps<GameCardProps>()
 
 
 </script>
 
 <style lang="scss" scoped>
 .game-card__container {
+    row-gap: 16px;
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
     position: relative;
-    max-width: 270px;
     padding: 6px;
     width: 100%;
     background: rgba(22, 5, 58, 0.57);
@@ -53,6 +56,7 @@ import SmartImage from '~/shared/ui/SmartImage.vue';
         transform: scale(1.05);
         transition: transform 0.3s ease;
     }
+
 }
 
 .badge {
@@ -66,6 +70,7 @@ import SmartImage from '~/shared/ui/SmartImage.vue';
     position: relative;
     border-radius: 12px;
     overflow: hidden;
+    height: 180px;
 
     .blur-field {
         display: flex;
@@ -85,7 +90,7 @@ import SmartImage from '~/shared/ui/SmartImage.vue';
 .description-box {
     display: flex;
     flex-direction: column;
-    row-gap: 6px;
+    row-gap: 12px;
 
     .company {
         color: rgba(80, 183, 217, 0.692)

@@ -1,9 +1,9 @@
 <template>
     <div class="banner-card__container">
-        <SmartImage :src="preview" class="image" />
+        <SmartImage :src="item.preview" class="image" path="media/games/" />
         <div class="content">
             <h2>{{ item?.name }}</h2>
-            <GameInfo />
+            <GameInfo :company="item.company" :desc="item.desc" :tags="item.tags" />
             <h2>{{ item?.price }} $</h2>
             <slot name="actions" />
         </div>
@@ -19,11 +19,8 @@ import SmartImage from '~/shared/ui/SmartImage.vue';
 interface Props {
     item: Game
 }
-
-const config = useRuntimeConfig()
 const props = defineProps<Props>();
 
-const preview = computed(() => config.public.baseImageUrl + 'media/games/' + props.item?.preview)
 </script>
 
 <style scoped lang="scss">

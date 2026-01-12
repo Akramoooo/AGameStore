@@ -24,7 +24,7 @@ const items = ref<Game[] | null>(null);
 
 onMounted(async () => {
     try {
-        items.value = await fetchGames();
+        items.value = await fetchGames(5);
     } catch (e) {
         console.error("Ошибка при загрузке игр:", e);
     }

@@ -2,8 +2,19 @@ export interface Game {
   id: number;
   name: string;
   price: number;
-  company: string;
+  company: Company;
   desc?: string;
   preview?: string;
-  tags?: Array<string>;
+  tags?: string[];
+  images?: string[];
+}
+
+export interface GameCardProps {
+  game: Game;
+}
+
+export interface Company {
+  id: string;
+  name: string;
+  site?: string;
 }
