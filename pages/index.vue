@@ -1,43 +1,21 @@
 <template>
     <div class="main-page">
-        <MainBanner :games="heroGames" v-if="heroGames" />
 
-        <Container>
-            <GameList :games="saleGames" title="Распродажа">
-                <template #content="{ game }">
-                    <GameCard :game="game" class="col-2">
-                        <template #action>
-                            <BaseButton block>Купить</BaseButton>
-                        </template>
-                    </GameCard>
-                </template>
-            </GameList>
-        </Container>
+        <MainBanner :games="heroGames" />
 
-        <Container>
-            <GameList :games="recommendGames" title="Рекоммендации для вас">
-                <template #content="{ game }">
-                    <GameBanner :game="game" class="col-4">
-                        <template #action>
-                            <BaseButton>Подробнее</BaseButton>
-                        </template>
-                    </GameBanner>
-                </template>
-            </GameList>
-        </Container>
+        <SalesWidget :games="saleGames" />
+
+        <RecommendationsWidget :games="recommendGames" />
+
     </div>
 </template>
 
 <script setup lang="ts">
 import { fetchGames, fetchHeroGames } from '~/entities/Game/api/game.api';
 import type { Game } from '~/entities/Game/types/Game.type';
-import GameBanner from '~/entities/Game/ui/GameBanner.vue';
-import GameCard from '~/entities/Game/ui/GameCard.vue';
-import BaseButton from '~/shared/ui/BaseButton/BaseButton.vue';
-import Container from '~/shared/ui/Container.vue';
 import MainBanner from '~/widgets/banners/ui/MainBanner.vue';
-import GameList from '~/widgets/game/ui/GameList.vue';
-
+import RecommendationsWidget from '~/widgets/game/ui/RecommendationsWidget.vue';
+import SalesWidget from '~/widgets/game/ui/SalesWidget.vue';
 
 definePageMeta({
     layout: "user"

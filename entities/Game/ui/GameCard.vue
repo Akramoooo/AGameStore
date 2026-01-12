@@ -1,33 +1,37 @@
 <template>
-    <div class="game-card__container form-container ">
-        <Badge title="-23%" class="badge" />
-        <div class="image-box">
-            <SmartImage class="image" :src="game.preview" path="media/games" />
-            <div class="blur-field">
-                <p class="p__big current-price">{{ game.price }} $</p>
-                <p class="p__middle old-price">{{ game.price }} $</p>
+    <Transition name="fade" mode="out-in">
+        <div class="game-card__container form-container " v-if="game">
+            <Badge title="-23%" class="badge" />
+            <div class="image-box">
+                <SmartImage class="image" :src="game.preview" path="media/games" />
+                <div class="blur-field">
+                    <p class="p__big current-price">{{ game.price }} $</p>
+                    <p class="p__middle old-price">{{ game.price }} $</p>
+                </div>
+            </div>
+            <div class="description-box">
+                <h5 class="p__big">{{ game.name }}</h5>
+                <p class="p__middle company">{{ game.company.name }}</p>
+                <div class="tags">
+                    <NuxtLink href="#" v-for="tag in game.tags">
+                        <p class="p__middle">{{ tag }}</p>
+                    </NuxtLink>
+                </div>
+
+                <slot name="action"></slot>
             </div>
         </div>
-        <div class="description-box">
-            <h5 class="p__big">{{ game.name }}</h5>
-            <p class="p__middle company">{{ game.company.name }}</p>
-            <div class="tags">
-                <NuxtLink href="#" v-for="tag in game.tags">
-                    <p class="p__middle">{{ tag }}</p>
-                </NuxtLink>
-            </div>
 
-            <slot name="action"></slot>
-        </div>
+        <GameCardSkeleton v-else />
+    </Transition>
 
-
-    </div>
 </template>
 
 <script setup lang="ts">
 import Badge from '~/shared/ui/Badge.vue';
 import SmartImage from '~/shared/ui/SmartImage.vue';
 import type { Game, GameCardProps } from '../types/Game.type';
+import GameCardSkeleton from './Skeletons/GameCardSkeleton.vue';
 
 const props = defineProps<GameCardProps>()
 
@@ -96,5 +100,15 @@ const props = defineProps<GameCardProps>()
         align-items: center;
         text-decoration: underline;
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

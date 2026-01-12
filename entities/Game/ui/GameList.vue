@@ -4,13 +4,13 @@
         <div class="grid__container">
             <slot name="content" v-for="game in games" :game="game" />
         </div>
-
     </div>
 </template>
 
 <script setup lang="ts">
 import type { Game } from '~/entities/Game/types/Game.type';
 import SectionHeader from '~/shared/ui/SectionHeader.vue';
+import GameListSkeleton from './Skeletons/GameListSkeleton.vue';
 
 interface GameListProps {
     games: Game[] | null
