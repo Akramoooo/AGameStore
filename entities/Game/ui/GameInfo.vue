@@ -12,9 +12,9 @@ import type { Company } from '../types/Game.type';
 import GameTags from './GameTags.vue';
 
 interface GameInfoProps {
-    company: Company;
+    company: Company
     desc?: string;
-    tags?: Array<string>;
+    tags?: string[];
 }
 
 const props = defineProps<GameInfoProps>();
@@ -25,7 +25,7 @@ const props = defineProps<GameInfoProps>();
 .game-info__container {
     display: flex;
     flex-direction: column;
-    row-gap: 6px;
+    row-gap: 10px;
 }
 
 

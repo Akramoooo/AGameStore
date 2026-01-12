@@ -7,6 +7,7 @@ export interface Game {
   preview?: string;
   tags?: string[];
   images?: string[];
+  banner_url?: string | null;
 }
 
 export interface GameCardProps {

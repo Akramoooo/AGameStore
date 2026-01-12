@@ -5,7 +5,7 @@
 
 <script lang="ts" setup>
 interface SmartImageProps {
-    src?: string;
+    src?: string | null;
     alt?: string;
     path?: string;
     fallback?: string;

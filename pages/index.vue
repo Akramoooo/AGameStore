@@ -1,6 +1,6 @@
 <template>
     <div class="main-page">
-        <MainBanner />
+        <MainBanner :games="heroGames" v-if="heroGames" />
 
         <Container>
             <GameList :games="saleGames" title="Распродажа">
@@ -29,14 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import { fetchGames } from '~/entities/Game/api/game.api';
+import { fetchGames, fetchHeroGames } from '~/entities/Game/api/game.api';
 import type { Game } from '~/entities/Game/types/Game.type';
 import GameBanner from '~/entities/Game/ui/GameBanner.vue';
 import GameCard from '~/entities/Game/ui/GameCard.vue';
 import BaseButton from '~/shared/ui/BaseButton/BaseButton.vue';
-import BaseScroll from '~/shared/ui/BaseScroll/BaseScroll.vue';
 import Container from '~/shared/ui/Container.vue';
-import SmartImage from '~/shared/ui/SmartImage.vue';
 import MainBanner from '~/widgets/banners/ui/MainBanner.vue';
 import GameList from '~/widgets/game/ui/GameList.vue';
 
@@ -46,15 +44,18 @@ definePageMeta({
 })
 
 const games = ref<Game[] | null>(null);
-const saleGames = computed(() => games.value?.slice(0, 3) || []);
-const recommendGames = computed(() => games.value?.slice(0, 3) || []);
+const saleGames = computed(() => games.value?.slice(0, 6) || []);
+const recommendGames = computed(() => games.value?.slice(6, 9) || []);
+const heroGames = ref<Game[] | null>(null);
 
 onMounted(async () => {
-    try {
-        games.value = await fetchGames(6);
-    } catch (e) {
-        console.error("Ошибка при загрузке игр:", e);
-    }
+    const [all, heroes] = await Promise.all([
+        fetchGames(10),
+        fetchHeroGames()
+    ]);
+
+    games.value = all;
+    heroGames.value = heroes;
 });
 
 
@@ -66,5 +67,4 @@ onMounted(async () => {
     flex-direction: column;
     row-gap: 80px;
 }
-
 </style>

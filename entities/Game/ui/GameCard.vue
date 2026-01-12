@@ -12,14 +12,8 @@
             <h5 class="p__big">{{ game.name }}</h5>
             <p class="p__middle company">{{ game.company.name }}</p>
             <div class="tags">
-                <NuxtLink href="#">
-                    <p class="p__middle">Horror</p>
-                </NuxtLink>
-                <NuxtLink href="#">
-                    <p class="p__middle">Actions</p>
-                </NuxtLink>
-                <NuxtLink href="#">
-                    <p class="p__middle">Survival</p>
+                <NuxtLink href="#" v-for="tag in game.tags">
+                    <p class="p__middle">{{ tag }}</p>
                 </NuxtLink>
             </div>
 

@@ -4,9 +4,16 @@
         <div class="content">
             <h4>{{ game?.name }}</h4>
             <GameInfo :company="game.company" :desc="game.desc" :tags="game?.tags" />
-            <BaseScroll v-if="game.images">
+            <BaseScroll>
                 <template #content>
-                    <SmartImage class="scroll_image" v-for="image in game.images" :src="image" />
+                    <template v-if="game.images && game.images.length > 0">
+                        <SmartImage v-for="(image, index) in game.images" :key="index" :src="image"
+                            class="scroll-image" />
+                    </template>
+
+                    <template v-else>
+                        <SmartImage v-for="i in 4" :key="i" class="scroll-image placeholder" />
+                    </template>
                 </template>
             </BaseScroll>
             <slot name="action" />
@@ -38,7 +45,7 @@ const props = defineProps<GameCardProps>()
 }
 
 
-.scroll_image {
+.scroll-image {
     width: 200px;
     height: 120px;
     flex-shrink: 0;

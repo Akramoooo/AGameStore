@@ -1,10 +1,10 @@
 <template>
     <div class="banner-card__container">
-        <SmartImage :src="item.preview" class="image" path="media/games/" />
+        <SmartImage :src="item.banner_url" class="image" path="media/games/" />
         <div class="content">
-            <h2>{{ item?.name }}</h2>
-            <GameInfo :company="item.company" :desc="item.desc" :tags="item.tags" />
-            <h2>{{ item?.price }} $</h2>
+            <h2>{{ item.name }}</h2>
+            <GameInfo :company="item?.company" :desc="item.desc" :tags="item?.tags" />
+            <h2>{{ item.price }} $</h2>
             <slot name="actions" />
         </div>
         <div class="overlay"></div>

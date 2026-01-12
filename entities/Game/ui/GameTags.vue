@@ -5,9 +5,11 @@
 </template>
 
 <script setup lang="ts">
+import Badge from '~/shared/ui/Badge.vue';
+
 
 interface GameTagsProps {
-    tags?: string[];
+    tags?: string[] | null;
 }
 const props = withDefaults(defineProps<GameTagsProps>(), {
     tags: () => []
