@@ -36,9 +36,9 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    "@pinia/nuxt",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "@nuxtjs/supabase",
-    "@pinia/nuxt",
   ],
 });
